@@ -12,23 +12,13 @@ const addPost = async (formData: FormData) => {
     console.log("Form Data:", { title, description, authorEmail });
 
     try {
-        // Find the user by email
-        const user = await User.findOne({ email: authorEmail });
-
-        if (!user) {
-            throw new Error("User not found");
-        }
 
         // Create the new post
         const newPost = await Post.create({
             title,
             description,
-            authorEmail: user, // Associate post with the user’s email
+            authorEmail 
         });
-
-        // Add the post ID to the user's posts array
-        user.posts.push(newPost._id);
-        await user.save();
 
         return JSON.parse(JSON.stringify(newPost)); // Ensure plain data is returned
     } catch (error) {

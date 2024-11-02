@@ -6,8 +6,6 @@ const userSchema = new mongoose.Schema({
   password: { type: String, select: false },
   image: { type: String },
   authProviderId: { type: String },
-  posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }], // Array of posts created by the user
-  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
 });
 
 export const User = mongoose.models?.User || mongoose.model("User", userSchema);
