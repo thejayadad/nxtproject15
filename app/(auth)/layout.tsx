@@ -6,8 +6,8 @@ export default function layout({
     children: React.ReactNode;
   }>){
     return (
-        <div>
+        <main className="flex h-full flex-col items-center justify-center">
             {children}
-        </div>
+        </main>
     )
 }

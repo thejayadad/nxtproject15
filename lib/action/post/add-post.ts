@@ -2,7 +2,6 @@
 
 import connectDB from "@/lib/db";
 import { Post } from "@/models/Post";
-import { User } from "@/models/User";
 
 const addPost = async (formData: FormData) => {
     const title = formData.get("title") as string;

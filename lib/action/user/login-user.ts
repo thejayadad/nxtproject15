@@ -1,8 +1,6 @@
 'use server'
 
 import { signIn } from "@/auth";
-import connectDB from "@/lib/db";
-import { User } from "@/models/User";
 import { redirect } from "next/navigation";
 import { CredentialsSignin } from "next-auth";
 

@@ -1,12 +1,13 @@
 import { auth, signIn } from "@/auth";
 import { userLogin } from "@/lib/action/user/login-user";
+import { LoginForm } from "../_components/login-form";
 
 export default async function LoginPage(){
     const session = await auth()
     console.log("session ", session)
     return (
         <div>
-            <form
+            {/* <form
             action={userLogin}
             className="flex flex-col"
             >
@@ -25,7 +26,8 @@ export default async function LoginPage(){
                 >
                 <button type="submit">Login With Google</button>
                 </form>
-            </div>
+            </div> */}
+            <LoginForm />
         </div>
     )
 }
